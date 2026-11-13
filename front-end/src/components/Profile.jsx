@@ -19,11 +19,7 @@ const Profile = () => {
   useEffect(()=>{
     const recoverRecord = async () => {
         try{
-            const response = await axios.get(`http://localhost:8080/user`,{
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`,
-                },
-            })
+            const response = await axios.get(`http://localhost:8080/user`)
             console.log('Dados do usuário recuperados: ', response.data)
             setFormData(response.data);
         } catch(error){
@@ -43,13 +39,9 @@ const Profile = () => {
 
   const handleSubmit = () => {
     const newData = {... formData};
-    const editRecord = async (newRecord) => {
+    const editRecord = async () => {
         try{
-            const response = await axios.put(`http://localhost:8080/user`, newData, {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`,
-                },
-            })
+            const response = await axios.put(`http://localhost:8080/user`, newData)
             console.log('Dados do usuário alterados: ', response.data)
         } catch(error){
             console.error('Erro ao alterar dados do usuário:', error)

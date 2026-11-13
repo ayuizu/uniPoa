@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import "./App.css";
-import ProtectedRoute from "./components/ProtectedRoute";
+import AdminRoute from "./components/AdminRoute";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
@@ -33,15 +33,15 @@ function App() {
           <Route path='/contact' Component={ContactPage} />
           <Route path='/faq' Component={FAQPage} />
 
-          <Route path='/user' element={<ProtectedRoute isLoggedIn={true} > <UserPage /></ProtectedRoute>} />
-          <Route path='/profile' element={<ProtectedRoute isLoggedIn={true} > <ProfilePage /></ProtectedRoute>} />
-          <Route path='/medicines' element={<ProtectedRoute isLoggedIn={true}> <MedicinesPage /></ProtectedRoute>} />
-          <Route path='/weight' element={<ProtectedRoute isLoggedIn={true} > <WeightPage /></ProtectedRoute>} />
-          <Route path='/symptoms' element={<ProtectedRoute isLoggedIn={true} > <SymptomsPage /></ProtectedRoute>} />
-          <Route path='/vaccines' element={<ProtectedRoute isLoggedIn={true} > <VaccinesPage /></ProtectedRoute>} />
-          <Route path='/bloodPressure' element={<ProtectedRoute isLoggedIn={true} > <BloodPressurePage /></ProtectedRoute>} />
-          <Route path='/appointments' element={<ProtectedRoute isLoggedIn={true} > <AppointmentsPage /></ProtectedRoute>} />
-          <Route path='/relatory' element={<ProtectedRoute isLoggedIn={true}><Relatory /></ProtectedRoute>} />
+          <Route path='/user' element={<AdminRoute isAdmin={true}> <UserPage /></AdminRoute>} />
+          <Route path='/profile' element={<AdminRoute isAdmin={true}> <ProfilePage /></AdminRoute>} />
+          <Route path='/medicines' element={<AdminRoute isAdmin={true}> <MedicinesPage /></AdminRoute>} />
+          <Route path='/weight' element={<AdminRoute isAdmin={true}> <WeightPage /></AdminRoute>} />
+          <Route path='/symptoms' element={<AdminRoute isAdmin={true}> <SymptomsPage /></AdminRoute>} />
+          <Route path='/vaccines' element={<AdminRoute isAdmin={true}> <VaccinesPage /></AdminRoute>} />
+          <Route path='/bloodPressure' element={<AdminRoute isAdmin={true}> <BloodPressurePage /></AdminRoute>} />
+          <Route path='/appointments' element={<AdminRoute isAdmin={true}> <AppointmentsPage /></AdminRoute>} />
+          <Route path='/relatory' element={<AdminRoute isAdmin={true}><Relatory /></AdminRoute>} />
 
 
           {/* <Route path='/user' Component={UserPage} /> */}
