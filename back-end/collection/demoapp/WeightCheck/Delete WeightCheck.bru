@@ -1,0 +1,15 @@
+meta {
+  name: Delete WeightCheck
+  type: http
+  seq: 3
+}
+
+delete {
+  url: http://localhost:8080/user/weight-check/1
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}

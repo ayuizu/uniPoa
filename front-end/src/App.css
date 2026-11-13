@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:root{
+  --color1: #A68FF1;
+  --color2: #DDFFF9;
+  --color3: #1C4650;
+  --color4: #9479ee;
+  --color5: #a8dadb;
+  --color6: #e2dcf8;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  /*color: var(--color3);*/
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.content {
+  padding-top: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.div--banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #00000099;
+  width: 100%;
+  height: 560px;
+
+  background-image: url('./assets/hero_vlada-karpovich.jpg'), url('./assets/ruido.png');
+  background-position: center,center;
+  background-repeat: no-repeat, repeat;
+  background-size: cover, auto;
+  border-radius: 0 0 30px 30px;
+}
+
+.div--banner h1 {
+  font-size: 38px;
+  color: #fff;
+  margin: 0;
+}
+
+.div--banner p {
+  font-size: 25px;
+  color: #fff;
+  padding: 20px 150px;
+}
+
+/* .div--banner button {
+  font-size: 14px;
+  background-color: var(--color1);
+  width: 110px;
+  height: 38px;
+  border: none;
+  margin: 5px;
+  color: #fff;
+} */
+
+.div--banner--text {
+  width: 70%;
+  background-color: #A68FF1BA;
+  padding: 40px;
+  border-radius: 300px 50px 300px 50px;
+}
+
+.cont--info {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  height: 500px;
+  width: 60%;
+  padding-bottom: 100px;
+}
+
+.cont--info h1 {
+  color: var(--color3);
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.cont--info p {
+  color: var(--color3);
+  line-height: 1.5;
+  font-size: 17px;
+}
+
+.grid {
+  padding-top: 50px;
+  display: grid; /* Ativa o grid layout */
+  grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas de tamanhos iguais */
+  grid-gap: 50px; /* Espaçamento entre os itens */
+  justify-content: center; /* Centraliza o grid horizontalmente */
+  align-items: center; /* Alinha os itens na vertical */
+  margin: 0 auto; /* Centraliza o grid na página */
+  width: 80%; /* Define a largura do grid, você pode ajustar conforme necessário */
+  padding-bottom: 50px;
+}
+.item {
+  background-color: #fff;
+  text-align: center; /* Centraliza o texto e o conteúdo interno de cada item */
+  /* Cor de fundo dos itens */
+
+  border-radius: 8px; /* Bordas arredondadas nos itens, opcional */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra nos itens, opcional */
+  width: 286px; /* Mantendo a largura fixa para os itens */
+  height: 392px;
+  margin: 0 auto;
+  /* Centraliza cada item */
+}
+
+.itemImage{
+ object-fit: cover;
+}
+
+.item img {
+  max-width: 286px; /* Garante que as imagens não excedam o tamanho do item */
+  height: 286px; /* Mantém a proporção da imagem */
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.grid h3 {
+  margin: 10px 0;
+  font-size: 24px;
+  color: var(--color3);; /* Margem nos títulos para separá-los do restante */
+}
+
+.grid p {
+  font-size: 14px;
+  color: var(--color3);;
+  /* Cor do texto para os parágrafos */
+}
+
+.userContent{
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+}
+
+.page{
+  display: grid;
+  min-height: 120vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px auto 180px;
+}
+
+.pageContent{
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pageContent h1 {
+  margin: 50px 0 20px 0;
+}
+
+.pageGrid{
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.sendButton{
+  margin: 50px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: top;
+}
+
+.buttonPurple{
+  font-size: 14px;
+  color: white;
+  background-color: transparent;
+  min-width: 110px;
+  height: 38px;
+  border: none;
+  background-color: var(--color1);
+  border-radius: 15px;
+}
+
+.buttonPurple:hover {
+  background-color: var(--color4);
+  cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 880px){
+  .pageContent{
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 767px){
+  .pageContent{
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 767px){
+  .pageGrid{
+    grid-template-columns: 1fr;
+  }
+  .sendButton{
+    margin: 0;
+  }
+  .buttonPurple{
+    width: 300px;
+  }
+}

@@ -1,0 +1,167 @@
+/* Medicines.jsx */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: small;
+  line-height: 0;
+}
+
+.content {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  gap: 20px;
+
+}
+
+.records {
+  margin-top: 50px;
+  flex: 1;
+  /* border-right: 1px solid #ccc; */
+  padding-right: 5px;
+}
+
+.recordItem {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.recordItem p {
+  font-size: small;
+}
+
+.recordDetails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.recordDetailsRight,
+.recordDetailsLeft {
+  padding: 0 10px;
+}
+
+.recordDetailsRight {
+  border-left: 4px #ccc solid;
+}
+
+.recordItem:nth-child(even) {
+  background-color: #e0ccff;
+}
+
+.recordTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+
+.recordTitle div p {
+  color: #9479ee;
+  font-weight: bold;
+}
+
+.recordButton {
+  background: none;
+  border: none;
+}
+
+.recordButton:hover {
+  color: var(--color5);
+  cursor: pointer;
+}
+
+.excludeIcon {
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.editIcon {
+  margin-left: 5px;
+}
+
+
+/* MedicineMod.jsx */
+
+.formContainer {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.formGroup input,
+.formGroup select {
+  padding: 8px;
+  font-size: small;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+}
+
+.formLine {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.submitButton {
+  background-color: #b599ff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  min-width: 70px;
+  transition: 0.3s;
+}
+
+.submitButton:hover {
+  background-color: var(--color4);
+  min-width: 120px;
+}
+
+.deleteContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.deleteContainer h2 {
+  text-align: center;
+}
+
+.deleteButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.deleteButtons>button {
+  margin: 0 10px;
+}
+
+.deleteMsg {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.title {
+  margin-bottom: 20px;
+}

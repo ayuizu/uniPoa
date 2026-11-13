@@ -1,0 +1,26 @@
+meta {
+  name: Update Appointment
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:8080/user/appointment/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "name": "a",
+    "address": "a",
+    "date": "2024-12-30T15:00:00",
+    "doctorsName": "",
+    "description": "",
+    "reminders": ""
+  }
+}

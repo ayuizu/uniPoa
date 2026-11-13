@@ -1,0 +1,15 @@
+meta {
+  name: Create Symptom
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/user/symptom
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}

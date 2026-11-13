@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: var(--color2); */
+  color: var(--color3);
+}
+
+.pageAbout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.pageAbout h1 {
+  font-size: 38px;
+  color: var(--color1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pageAbout p {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 800px;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.pageAbout ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  max-width: 800px;
+}
+
+.pageAbout ul li {
+  font-size: 18px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  text-align: justify;
+  margin: 20px 0;
+  padding: 20px;
+  border-bottom: 1px dashed #ddd;
+}
+
+.pageAbout ul li::before {
+  content: "✔";
+  color: var(--color1);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.pageAbout .highlights {
+  background-color: var(--color1);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 40px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  text-align: center;
+}
+
+.pageAbout .highlights p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.pageAbout .cta {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.pageAbout .cta button {
+  font-size: 16px;
+  background-color: var(--color1);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pageAbout .cta button:hover {
+  background-color: var(--color4);
+}
+
+@media (max-width: 768px) {
+  .pageAbout p {
+    font-size: 16px;
+  }
+
+  .pageAbout ul li {
+    font-size: 16px;
+  }
+
+  .pageAbout h1 {
+    font-size: 32px;
+  }
+}

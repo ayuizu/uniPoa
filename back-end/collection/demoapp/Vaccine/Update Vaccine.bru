@@ -1,0 +1,25 @@
+meta {
+  name: Update Vaccine
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:8080/user/vaccine/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "name": "Coronavac",
+    "description": "vaccine for the covid19 virus",
+    "frequencyValue": "12",
+    "frequencyUnit": "MONTHS",
+    "applicationDate": "2021-01-06"
+  }
+}

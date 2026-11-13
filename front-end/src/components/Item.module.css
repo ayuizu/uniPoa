@@ -1,0 +1,59 @@
+/* item Item Card */
+
+
+.item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.item:hover {
+  transform: translateY(-5px);
+}
+
+/* Header */
+.itemHeader {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.itemTitle {
+  font-size: 0.75rem;
+  color: #9479ee;
+  margin: 0;
+}
+
+/* Content */
+.itemContent {
+  margin-bottom: 15px;
+}
+
+.itemContent p {
+  margin: 0 0 10px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Details List */
+.itemDetails {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.itemDetails li {
+  margin: 5px 0;
+  font-size: 0.5em;
+}
+
+.itemDetails strong {
+  color: #333;
+}

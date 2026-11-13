@@ -1,0 +1,22 @@
+meta {
+  name: Update WeightCheck
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:8080/user/weight-check/103
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "weight": 127.86,
+    "date": "2010-01-07"
+  }
+}

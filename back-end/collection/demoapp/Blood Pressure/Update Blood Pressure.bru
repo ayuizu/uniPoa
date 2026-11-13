@@ -1,0 +1,24 @@
+meta {
+  name: Update Blood Pressure
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:8080/user/bloodPressure/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "systolicPressure": 100,
+    "diastolicPressure": 90,
+    "heartRate": 102, 
+    "checkTime": "2024-10-04T16:50:00"
+  }
+}

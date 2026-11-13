@@ -1,0 +1,28 @@
+meta {
+  name: Update User
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:8080/user
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "username": "updated 5",
+    "password": "12345678",
+    "email": "mark1@email.com",
+    "birthdate": "2016-02-29",
+    "height": 150,
+    "phone": "1198392188",
+    "gender": "MALE"
+  }
+  
+}

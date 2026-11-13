@@ -1,0 +1,27 @@
+meta {
+  name: Update Medicine
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:8080/user/medicine/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "name": "updated num 1",
+    "description": "something",
+    "frequencyValue": 15,
+    "frequencyUnit": "DAYS",
+    "doseValue": 1,
+    "doseUnit": "MG",
+    "registerDate": "2023-12-04T16:50:00"
+  }
+}

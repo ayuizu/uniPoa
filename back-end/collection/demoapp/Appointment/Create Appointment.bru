@@ -1,0 +1,26 @@
+meta {
+  name: Create Appointment
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/user/appointment
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "name": "Psychologist",
+    "address": "Fifth Avenue",
+    "date": "2024-12-30T15:00:00",
+    "doctorsName": "Dr. John Smith",
+    "description": "Second appointment",
+    "reminders": "bring the information from the last appointment"
+  }
+}

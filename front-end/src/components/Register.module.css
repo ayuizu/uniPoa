@@ -1,0 +1,124 @@
+.registerContainer {
+    flex-shrink: 0;
+
+    max-width: 800px;
+    margin: 150px auto 100px auto;
+    padding: 40px;
+
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.registerContainer h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding: 10px;
+    text-align: left;
+    color: #000;
+    border-bottom: #ddd 2px solid;
+}
+
+.registerContainer p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.registerContainer p span {
+    font-weight: bold;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.inputGroup {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.inputGroup div {
+    flex: 1;
+}
+
+.inputGroup div label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    font-size: 14px;
+    color: #666
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.btnEnviar {
+    background-color: #9b89ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    min-width: 90px;
+    transition: 0.3s;
+}
+
+.registerLink Link {
+    color: white;
+}
+
+.btnEnviar:hover {
+    background-color: var(--color4);
+    min-width: 150px;
+}
+
+a {
+    color: var(--color1);
+}
+
+a:hover {
+    color: var(--color4);
+}
+
+a:visited {
+    color: var(--color3);
+}
+
+.errorMsg {
+    color: red;
+}
+
+.registerDialog {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+}
+
+Link {
+    color: white;
+}

@@ -1,0 +1,192 @@
+header {
+  background-color: #e2dcf8;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 79px;
+  border-radius: 0 0 25px 25px;
+}
+
+/* Logo */
+
+.headerLogo img {
+  object-fit: contain;
+  height: 60px;
+}
+
+/* Navigation */
+
+.divButtons{
+  display: flex;
+}
+
+.divButtons > li{
+  margin: 10px;
+  list-style: none;
+  align-content:center;
+}
+
+.divButtons > li > button {
+  font-size: 14px;
+  background-color: transparent;
+  width: 110px;
+  height: 38px;
+  border: none;
+  transition: 0.2s ease-in-out;
+  border-radius: 15px;
+  
+}
+
+.divButtons > li > button:hover {
+  width: 130px;
+  font-size: 16px;
+}
+
+/* Buttons */
+
+#buttonPurple {
+  background-color: var(--color1);
+  color: white;
+}
+#buttonPurple:hover {
+  background-color: var(--color4);
+}
+#buttonGreen {
+  background-color: var(--color2);
+}
+#buttonGreen:hover {
+  background-color: var(--color5);
+}
+
+/* Links */
+
+.headerLink{
+  text-decoration: none;
+  color: var(--color3);
+  transition: 0.2s ease-in-out;
+}
+.headerLink:hover{
+  color:var(--color1);
+  font-size: 18px;
+}
+
+button > .headerLink:hover{
+  color: var(--color3);
+}
+
+/* Logout*/
+
+.buttonLogout{
+  width: 20px;
+
+}
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:after {
+  display: none;
+  position: absolute;
+  top: 100%;
+  border-radius: 1px;
+  left: calc(-100%);
+  content: attr(data-tooltip);
+  white-space: nowrap;
+  background-color: none;
+  color: var(--color3);
+  font-size:medium;
+}
+
+[data-tooltip]:hover:after {
+  display: block;
+}
+
+.icon {
+  margin-left: 10px;
+}
+
+.toggleLink{
+  display: none;
+  font-size: 0;
+}
+
+.menuToggle{
+  top: 30px;
+  left: 10px;
+  z-index: 100000;
+  background: none;
+  border: none;
+  color: var(--color4);
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;            
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .menuToggle, .toggleLink {
+      display: block;
+  }
+  .menuToggle:hover{
+    color: var(--color2);
+  }
+  nav {
+      display: none;
+  }
+  nav.active {
+    display: block;
+  }
+  header{
+    flex-direction: column;
+  }
+  .headerLogo{
+    margin-top: 10px;
+  }
+  .divButtons{
+    flex-direction: column;
+    margin-left: 10px;
+    padding-bottom: 25px;
+    align-items: left;
+    width: 100vw;
+    background: var(--color6);
+    border-radius: 0 0 25px 25px;
+  }
+  .divButtons > li{
+    margin:0;
+  }
+  .headerLink{
+    width: 100vw;
+    margin: 0 0 0 10px;
+  }
+  .headerLink:hover{
+    color:var(--color3);
+    background-color:var(--color1);
+  }
+  .divButtons > li > button{
+    text-align: left;
+    width: 200px;
+  }
+  .divButtons > li > button:hover{
+    text-align: left;
+    width: 100%;
+    border-radius: 0;
+    background-color:var(--color1);
+  }
+  #buttonPurple, #buttonGreen {
+    padding-left: 10px;
+    border:none;
+    width: 100%;
+    background-color: var(--color6);
+    text-align: left;
+  }
+  #buttonPurple:hover, #buttonGreen:hover{
+    background-color:var(--color1);
+  }
+}

@@ -1,0 +1,23 @@
+meta {
+  name: Create User
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8080/register
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "Mark5",
+    "password": "12345678",
+    "email": "mark5@email.com",
+    "birthdate": "1995-02-15",
+    "height": 178,
+    "phone": "1110259654",
+    "gender": "MALE"
+  }
+}

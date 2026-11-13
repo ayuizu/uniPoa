@@ -1,0 +1,24 @@
+meta {
+  name: Create Blood Pressure
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/user/bloodPressure
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "systolicPressure": 100,
+    "diastolicPressure": 90,
+    "heartRate": 102, 
+    "checkTime": "2023-10-04T16:50:00"
+  }
+}

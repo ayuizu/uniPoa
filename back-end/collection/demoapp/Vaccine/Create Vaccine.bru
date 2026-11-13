@@ -1,0 +1,25 @@
+meta {
+  name: Create Vaccine
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/user/vaccine
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{accessToken}}
+}
+
+body:json {
+  {
+    "name": "Influenza",
+    "description": "vaccine for the influenza virus",
+    "frequencyValue": "12",
+    "frequencyUnit": "MONTHS",
+    "applicationDate": "2023-05-25"
+  }
+}
