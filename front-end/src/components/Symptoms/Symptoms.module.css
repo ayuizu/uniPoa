@@ -24,7 +24,7 @@
 
 .recordItem {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 3px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
@@ -127,7 +127,7 @@
   font-size: 16px;
   min-width: 70px;
 
-  border-radius: 15px;
+  border-radius: 3px;
   transition: 0.3s;
 }
 

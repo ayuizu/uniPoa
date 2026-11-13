@@ -45,7 +45,7 @@ a {
   background-position: center,center;
   background-repeat: no-repeat, repeat;
   background-size: cover, auto;
-  border-radius: 0 0 30px 30px;
+  border-radius: 3px;
 }
 
 .div--banner h1 {
@@ -74,7 +74,7 @@ a {
   width: 70%;
   background-color: #A68FF1BA;
   padding: 40px;
-  border-radius: 300px 50px 300px 50px;
+  border-radius: 3px;
 }
 
 .cont--info {
@@ -118,7 +118,7 @@ a {
   text-align: center; /* Centraliza o texto e o conteúdo interno de cada item */
   /* Cor de fundo dos itens */
 
-  border-radius: 8px; /* Bordas arredondadas nos itens, opcional */
+  border-radius: 3px; /* Bordas arredondadas nos itens, opcional */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra nos itens, opcional */
   width: 286px; /* Mantendo a largura fixa para os itens */
   height: 392px;
@@ -134,7 +134,7 @@ a {
   max-width: 286px; /* Garante que as imagens não excedam o tamanho do item */
   height: 286px; /* Mantém a proporção da imagem */
   margin-bottom: 10px;
-  border-radius: 8px;
+  border-radius: 3px;
 }
 
 .grid h3 {
@@ -196,7 +196,7 @@ a {
   height: 38px;
   border: none;
   background-color: var(--color1);
-  border-radius: 15px;
+  border-radius: 3px;
 }
 
 .buttonPurple:hover {

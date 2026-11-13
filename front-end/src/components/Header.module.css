@@ -10,7 +10,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 79px;
-  border-radius: 0 0 25px 25px;
 }
 
 /* Logo */
@@ -39,7 +38,7 @@ header {
   height: 38px;
   border: none;
   transition: 0.2s ease-in-out;
-  border-radius: 15px;
+  border-radius: 3px;
   
 }
 
@@ -156,7 +155,7 @@ button > .headerLink:hover{
     align-items: left;
     width: 100vw;
     background: var(--color6);
-    border-radius: 0 0 25px 25px;
+    border-radius: 3px;
   }
   .divButtons > li{
     margin:0;

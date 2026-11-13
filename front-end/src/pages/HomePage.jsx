@@ -10,7 +10,7 @@ const HomePage = () => {
       <div className="content">
         <div className="div--banner">
           <div className="div--banner--text">
-            <h1>Sua saúde descomplicada</h1>
+            <h1>UniPOA inaugura novo portal de matrícula</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum finibus nisl, a pretium sapien luctus vel. Etiam luctus ullamcorper eros vel congue. Aenean et tortor augue. Phasellus cursus lacus eget ligula dignissim, at viverra nulla maximus. Maecenas faucibus nibh ut risus vulputate faucibus. Nam et vestibulum enim. Cras semper sodales est, aliquet finibus sem consequat sit amet. Phasellus massa leo, tristique eget est vitae, dapibus pulvinar elit. Aenean condimentum sollicitudin cursus. Sed at rutrum dolor. Aliquam elit felis, tincidunt ac nulla ac, porta porta odio.
             </p>
@@ -19,7 +19,7 @@ const HomePage = () => {
         <div className="cont--info">
           <h1>O período de matrículas está aberto!</h1>
           <p>
-            Com o Salutia, você organiza e acessa todas as informações importantes da sua saúde de forma prática e segura. Um único aplicativo para gerenciar seu bem-estar com facilidade e tranquilidade. Simplifique o cuidado com a sua saúde!
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum finibus nisl, a pretium sapien luctus vel. Etiam luctus ullamcorper eros vel congue. Aenean et tortor augue.
           </p>
           <div className="grid">
             <div className="item">

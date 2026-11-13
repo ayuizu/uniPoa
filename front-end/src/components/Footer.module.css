@@ -8,7 +8,6 @@
   align-items: center; /* Centraliza verticalmente */
   position: relative;
   margin-top: 50px; /* Espaçamento do conteúdo acima */
-  border-radius: 25px 25px 0 0;
   border-top: 1px var(--color1);
 }
 

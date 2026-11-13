@@ -5,7 +5,7 @@
     margin: 150px auto 100px auto;
     padding: 40px;
 
-    border-radius: 20px;
+    border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
@@ -80,7 +80,7 @@ input[type="checkbox"] {
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 15px;
+    border-radius: 3px;
     cursor: pointer;
     font-size: 16px;
     min-width: 90px;
