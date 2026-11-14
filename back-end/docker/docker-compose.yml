@@ -1,12 +1,17 @@
 services:
   mysql:
-    image: mysql
+    image: mysql:8.0
+    container_name: unipoa-mysql
     ports:
       - "3306:3306"
-    expose:
-      - "3306"
     environment:
-      - MYSQL_USER=admin
-      - MYSQL_PASSWORD=123
-      - MYSQL_DATABASE=mydb
-      - MYSQL_ROOT_PASSWORD=123
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: unipoa_matriculas
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 123
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d
+
+volumes:
+  mysql_data:
