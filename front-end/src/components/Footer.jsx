@@ -12,7 +12,7 @@ function Footer() {
     <footer>
       <div className={classes.footer}>
         <div className={classes.footerIcons}>
-          <img src={Logo} alt="Health Card" />
+          <img src={Logo} alt="UniPOA" />
         </div>
         <div className={classes.contentInfo}>
           <div className={classes.contentDiv}>
@@ -26,7 +26,6 @@ function Footer() {
           <div className={classes.contentDiv}>
             <ul>
               <li><a className={classes.link} href="/login">Login</a></li>
-              <li><a className={classes.link} href="/register">Cadastre-se</a></li>
             </ul>
             <div className={classes.contactIconsDiv}>
               <a href="#" className={`${classes.contactIcon} ${classes.link}`}><FontAwesomeIcon icon={faWhatsapp} style={{color: "#1C4650",}} size="xl" /></a>
