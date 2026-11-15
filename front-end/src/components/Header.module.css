@@ -77,6 +77,21 @@ header {
   display: none;
 }
 
+/* Cabeçalho da área logada: mais baixo e com logo menor, como no Figma */
+.headerIn {
+  height: 64px;
+  padding: 0 24px;
+}
+
+.headerIn .headerLogo h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.headerIn .menuToggle {
+  top: 20px;
+}
+
 /* Navigation */
 
 .divButtons{

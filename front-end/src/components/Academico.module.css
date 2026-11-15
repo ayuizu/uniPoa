@@ -2,13 +2,13 @@
 
 .layout {
   min-height: 100vh;
-  padding: 100px 0 0 250px; /* header fixo (100px) e menu lateral fixo (250px) */
+  padding: 64px 0 0 250px; /* header fixo (64px) e menu lateral fixo (250px) */
   background-color: #f7f7fb;
 }
 
 .conteudo {
-  max-width: 1150px;
-  margin: 0 auto;
+  max-width: 1400px;
+  margin: 0;
   padding: 0 40px 60px 40px;
   color: var(--color3);
 }
@@ -252,6 +252,14 @@
   border-radius: 6px;
   color: var(--color3);
   background-color: #fff;
+}
+
+.campo select:has(option[value=""]:checked) {
+  color: #9aa1ad;
+}
+
+.campo select option {
+  color: var(--color3);
 }
 
 .campo input:focus,

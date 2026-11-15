@@ -24,7 +24,7 @@ const HeaderIn = () => {
   };
 
   return (
-    <header>
+    <header className={classes.headerIn}>
       <div className={classes.headerLogo}>
       <Link to={paginaInicialDoPerfil()}>
           <h1>UniPOA</h1>
