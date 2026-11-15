@@ -7,7 +7,14 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { linksDoPerfil, paginaInicialDoPerfil } from "./navegacao";
-import { sair } from "../services/sessao";
+import { sair, nomeUsuario, descricaoUsuario } from "../services/sessao";
+
+// Iniciais para o avatar: "Ana Silva" -> "AS", "Administrador" -> "AD"
+function iniciais(nome) {
+  const partes = nome.trim().split(/\s+/);
+  const letras = partes.length > 1 ? partes[0][0] + partes[partes.length - 1][0] : partes[0].slice(0, 2);
+  return letras.toUpperCase();
+}
 
 const HeaderIn = () => {
 
@@ -29,15 +36,24 @@ const HeaderIn = () => {
       <Link to={paginaInicialDoPerfil()}>
           <h1>UniPOA</h1>
           </Link>
+          <span className={classes.headerSubtitulo}>Portal de Matrículas</span>
       </div>
       <div className={classes.headerNav}>
+        <div className={classes.usuario}>
+          <span className={classes.avatar}>{iniciais(nomeUsuario() || 'Usuário')}</span>
+          <div>
+            <strong>{nomeUsuario()}</strong>
+            <span>{descricaoUsuario()}</span>
+          </div>
+        </div>
         <button className={classes.menuToggle} onClick={handleMenuToggle} ><FontAwesomeIcon className={classes.icon} icon={faBars} /></button>
-        <nav className={ menuActive ? `${classes.active}` : ""}>
+        <nav className={`${classes.navMobile} ${menuActive ? classes.active : ""}`}>
           <ul className={classes.divButtons}>
             {linksDoPerfil().map((link) => (
               <li key={link.to}><button className={classes.toggleLink}><Link to={link.to}><FontAwesomeIcon className={classes.icon} icon={link.icone} /> {link.texto}</Link></button></li>
             ))}
-            <li><button id={classes.buttonGreen} type='button' onClick={handleLogout}><span className={classes.headerLink}>Sair <FontAwesomeIcon className={classes.icon} icon={faArrowRightFromBracket} /></span></button></li>
+            {/* No computador o "Sair da conta" fica no menu lateral */}
+            <li className={classes.somenteMobile}><button id={classes.buttonGreen} type='button' onClick={handleLogout}><span className={classes.headerLink}>Sair <FontAwesomeIcon className={classes.icon} icon={faArrowRightFromBracket} /></span></button></li>
           </ul>
         </nav>
       </div>

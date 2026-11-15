@@ -1,9 +1,15 @@
 /* Estilos compartilhados pelas telas de matrícula, grade e turmas */
 
+.layout {
+  min-height: 100vh;
+  padding: 100px 0 0 250px; /* header fixo (100px) e menu lateral fixo (250px) */
+  background-color: #f7f7fb;
+}
+
 .conteudo {
-  width: 75%;
+  max-width: 1150px;
   margin: 0 auto;
-  padding-bottom: 60px;
+  padding: 0 40px 60px 40px;
   color: var(--color3);
 }
 
@@ -256,8 +262,12 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .layout {
+    padding-left: 0;
+  }
+
   .conteudo {
-    width: 92%;
+    padding: 0 16px 40px 16px;
   }
 
   .formGrid {
