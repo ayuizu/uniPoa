@@ -41,6 +41,12 @@ const TurmasPage = () => {
         setSucesso('');
     };
 
+    const cancelar = () => {
+        setForm(FORM_VAZIO);
+        setErroForm('');
+        setSucesso('');
+    };
+
     const salvar = async (e) => {
         e.preventDefault();
         if (!form.idProfessor || !form.idDisciplina || !form.dia || !form.turno) {
@@ -77,53 +83,58 @@ const TurmasPage = () => {
             {erro && <p className={classes.alertaErro}>{erro}</p>}
 
             <form className={classes.cartao} onSubmit={salvar}>
-                <h2>Nova turma</h2>
+                <h2>Informações da turma</h2>
+                <p className={classes.descricaoForm}>Preencha os campos para ofertar uma nova turma no semestre {SEMESTRE_ATUAL}.</p>
                 <div className={classes.formGrid}>
                     <div className={classes.campo}>
-                        <label htmlFor="idProfessor">Professor</label>
+                        <label htmlFor="idProfessor">Professor *</label>
                         <select id="idProfessor" name="idProfessor" value={form.idProfessor} onChange={atualizarCampo}>
-                            <option value="">Selecione</option>
+                            <option value="">Selecione o professor</option>
                             {professores.map((p) => <option key={p.id} value={p.id}>{p.nome} {p.sobrenome}</option>)}
                         </select>
                     </div>
                     <div className={classes.campo}>
-                        <label htmlFor="idDisciplina">Disciplina</label>
+                        <label htmlFor="idDisciplina">Disciplina *</label>
                         <select id="idDisciplina" name="idDisciplina" value={form.idDisciplina} onChange={atualizarCampo}>
-                            <option value="">Selecione</option>
+                            <option value="">Selecione a disciplina</option>
                             {disciplinas.map((d) => <option key={d.id} value={d.id}>{d.nome} ({d.periodo}º período)</option>)}
                         </select>
                     </div>
                     <div className={classes.campo}>
-                        <label htmlFor="vagasMax">Vagas</label>
-                        <input id="vagasMax" name="vagasMax" type="number" min="1" value={form.vagasMax} onChange={atualizarCampo} />
-                    </div>
-                    <div className={classes.campo}>
-                        <label htmlFor="dia">Dia da semana</label>
+                        <label htmlFor="dia">Dia da semana *</label>
                         <select id="dia" name="dia" value={form.dia} onChange={atualizarCampo}>
-                            <option value="">Selecione</option>
+                            <option value="">Selecione o dia</option>
                             {DIAS.map((d) => <option key={d.codigo} value={d.codigo}>{d.nome}</option>)}
                         </select>
                     </div>
                     <div className={classes.campo}>
-                        <label htmlFor="turno">Horário</label>
+                        <label htmlFor="turno">Horário *</label>
                         <select id="turno" name="turno" value={form.turno} onChange={atualizarCampo}>
-                            <option value="">Selecione</option>
+                            <option value="">Selecione o horário</option>
                             {TURNOS.map((t) => <option key={t.codigo} value={t.codigo}>{t.faixa}</option>)}
                         </select>
                     </div>
                     <div className={classes.campo}>
-                        <label>Semestre</label>
-                        <span className={classes.campoInfo}>{SEMESTRE_ATUAL}</span>
+                        <label htmlFor="vagasMax">Vagas *</label>
+                        <input id="vagasMax" name="vagasMax" type="number" min="1" placeholder="Ex.: 30" value={form.vagasMax} onChange={atualizarCampo} />
+                    </div>
+                    <div className={classes.campo}>
+                        <label htmlFor="semestre">Semestre</label>
+                        <input id="semestre" value={SEMESTRE_ATUAL} disabled />
                     </div>
                 </div>
 
                 {erroForm && <p className={classes.alertaErro} style={{ marginTop: 20 }}>{erroForm}</p>}
                 {sucesso && <p className={classes.alertaSucesso} style={{ marginTop: 20 }}>{sucesso}</p>}
 
-                <div className={classes.acoes}>
-                    <button type="submit" className="buttonPurple" disabled={salvando}>
-                        {salvando ? 'Salvando...' : 'Criar turma'}
-                    </button>
+                <div className={classes.rodapeForm}>
+                    <span className={classes.obrigatorios}>* Campos obrigatórios</span>
+                    <div className={classes.botoes}>
+                        <button type="button" className={classes.botaoSecundario} onClick={cancelar}>Cancelar</button>
+                        <button type="submit" className="buttonPurple" disabled={salvando}>
+                            {salvando ? 'Salvando...' : 'Salvar turma'}
+                        </button>
+                    </div>
                 </div>
             </form>
 

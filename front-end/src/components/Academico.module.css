@@ -219,10 +219,16 @@
 
 /* Formulários */
 
+.descricaoForm {
+  font-size: 13px;
+  opacity: 0.75;
+  margin: -10px 0 20px 0;
+}
+
 .formGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 24px;
 }
 
 .campo {
@@ -232,23 +238,53 @@
 }
 
 .campo label {
+  font-size: 13px;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .campo input,
 .campo select {
-  padding: 8px;
+  height: 42px;
+  padding: 0 12px;
   font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 1px solid #dfe3ea;
+  border-radius: 6px;
   color: var(--color3);
   background-color: #fff;
 }
 
-.campoInfo {
-  padding: 8px 0;
-  font-size: 14px;
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: var(--color1);
+  box-shadow: 0 0 0 3px #ece6fd;
+}
+
+.campo input:disabled {
+  background-color: #f6f7fb;
+  color: #6b7280;
+}
+
+.rodapeForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #eef0f4;
+}
+
+.obrigatorios {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.botoes {
+  display: flex;
+  gap: 10px;
 }
 
 /* Modal de confirmação */
