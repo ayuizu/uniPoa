@@ -36,6 +36,11 @@ public class AlunoController {
         return ResponseEntity.ok(disciplinaRepository.findAll());
     }
 
+    @GetMapping("/alunos")
+    public ResponseEntity<List<Aluno>> listarAlunos() {
+        return ResponseEntity.ok(alunoRepository.findAll());
+    }
+
     @GetMapping("/alunos/{id}")
     public ResponseEntity<Aluno> buscarAluno(@PathVariable Long id) {
         return alunoRepository.findById(id)

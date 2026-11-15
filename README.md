@@ -35,7 +35,6 @@ b) Visão institucional:
 - Spring Framework
   - Spring Boot
   - Lombok para geração de Getters, Setters e Construtores
-  - Spring Security para autenticação e autorização com Token JWT (JSON Web Token)
   - Spring Validation para validação de dados e regras de negócio
   - Spring Web para comunicação REST entre Front-End e Back-End
 
