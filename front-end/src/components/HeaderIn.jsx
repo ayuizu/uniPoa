@@ -7,14 +7,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { linksDoPerfil, paginaInicialDoPerfil } from "./navegacao";
-import { sair, nomeUsuario, descricaoUsuario } from "../services/sessao";
-
-// Iniciais para o avatar: "Ana Silva" -> "AS", "Administrador" -> "AD"
-function iniciais(nome) {
-  const partes = nome.trim().split(/\s+/);
-  const letras = partes.length > 1 ? partes[0][0] + partes[partes.length - 1][0] : partes[0].slice(0, 2);
-  return letras.toUpperCase();
-}
+import { sair, nomeUsuario, descricaoUsuario, iniciais } from "../services/sessao";
 
 const HeaderIn = () => {
 
@@ -40,7 +33,7 @@ const HeaderIn = () => {
       </div>
       <div className={classes.headerNav}>
         <div className={classes.usuario}>
-          <span className={classes.avatar}>{iniciais(nomeUsuario() || 'Usuário')}</span>
+          <span className={classes.avatar}>{iniciais(nomeUsuario())}</span>
           <div>
             <strong>{nomeUsuario()}</strong>
             <span>{descricaoUsuario()}</span>

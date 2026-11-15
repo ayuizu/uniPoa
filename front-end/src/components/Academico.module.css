@@ -13,12 +13,21 @@
   color: var(--color3);
 }
 
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 50px 0 25px 0;
+}
+
 .conteudo h1 {
-  margin: 50px 0 5px 0;
+  margin: 0 0 5px 0;
 }
 
 .subtitulo {
-  margin: 0 0 25px 0;
+  margin: 0;
   opacity: 0.85;
 }
 

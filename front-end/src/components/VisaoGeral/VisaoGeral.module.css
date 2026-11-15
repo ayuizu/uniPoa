@@ -1,0 +1,203 @@
+/* Visão geral (aluno e administrador) */
+
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.perfil strong {
+  display: block;
+  font-size: 15px;
+}
+
+.perfil div span {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e5defc;
+  color: var(--color4);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pilula {
+  margin-left: auto;
+  background-color: #def5ec;
+  color: #2f7d62;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Cartões de resumo */
+
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.cartaoResumo {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  padding: 16px 18px;
+}
+
+.rotulo {
+  display: block;
+  font-size: 12px;
+  opacity: 0.75;
+  margin-bottom: 6px;
+}
+
+.cartaoResumo div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cartaoResumo strong {
+  font-size: 26px;
+}
+
+.cartaoResumo small {
+  font-size: 12px;
+  color: #2f9b74;
+}
+
+.cartaoDestaque {
+  background-color: #efeafd;
+  color: var(--color4);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.cartaoDestaque:hover {
+  background-color: #e5defc;
+}
+
+/* Colunas: conteúdo principal + atalhos */
+
+.colunas {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.colunas h2 {
+  margin-bottom: 4px;
+}
+
+.descricao {
+  font-size: 13px;
+  opacity: 0.75;
+  margin: 0 0 15px 0;
+}
+
+.verMais {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color4);
+}
+
+/* Acesso rápido */
+
+.acesso {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  color: var(--color3);
+}
+
+.acesso strong {
+  display: block;
+  font-size: 14px;
+}
+
+.acesso small {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.acessoIcone {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.roxo {
+  background-color: #f1edfd;
+}
+
+.roxo .acessoIcone {
+  background-color: #ddd3fb;
+  color: var(--color4);
+}
+
+.verde {
+  background-color: #e8f7f0;
+}
+
+.verde .acessoIcone {
+  background-color: #cdeee0;
+  color: #2f7d62;
+}
+
+.acesso:hover {
+  filter: brightness(0.97);
+}
+
+.tituloAviso {
+  font-size: 13px;
+  margin: 20px 0 8px 0;
+}
+
+.aviso {
+  background-color: #f6f7fb;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.aviso p {
+  font-size: 13px;
+  margin: 4px 0 0 0;
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 900px) {
+  .cartoes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .colunas {
+    grid-template-columns: 1fr;
+  }
+}

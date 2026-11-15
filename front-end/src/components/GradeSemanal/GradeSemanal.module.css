@@ -63,3 +63,38 @@
 .turma button:hover {
   background-color: #fde8e7;
 }
+
+/* Versão compacta (Visão geral) */
+
+.compacta {
+  min-width: 480px;
+  font-size: 12px;
+}
+
+.compacta th {
+  padding: 6px 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.compacta .colunaHorario {
+  width: 64px;
+  text-transform: none;
+}
+
+.compacta td {
+  height: 44px;
+  padding: 3px;
+}
+
+.compacta .turma {
+  padding: 4px 6px;
+}
+
+.compacta .turma strong {
+  font-size: 11px;
+}
+
+.compacta .turma span {
+  font-size: 10px;
+}
