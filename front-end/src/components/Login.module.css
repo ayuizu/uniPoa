@@ -80,3 +80,25 @@
   background-color: var(--color4);
   color: var(--color3);
 }
+
+.btnLogin:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  width: 80%;
+  background-color: var(--color1);
+  color: white;
+}
+
+.selectAluno {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+  color: var(--color3);
+}
+
+.cardLogin .erro {
+  color: #b3261e;
+}

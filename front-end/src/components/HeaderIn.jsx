@@ -1,4 +1,3 @@
-// 20/10 Ayumi: falta direcionar corretamente os Links
 import classes from "./Header.module.css";
 
 import { useState } from "react";
@@ -6,7 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faStethoscope, faCapsules, faSyringe, faHeartPulse, faWeightScale, faCalendar, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { linksDoPerfil, paginaInicialDoPerfil } from "./navegacao";
+import { sair } from "../services/sessao";
 
 const HeaderIn = () => {
 
@@ -18,13 +19,14 @@ const HeaderIn = () => {
   };
 
   const handleLogout = () => {
+    sair();
     navigate('/');
   };
 
   return (
     <header>
       <div className={classes.headerLogo}>
-      <Link to="/user">
+      <Link to={paginaInicialDoPerfil()}>
           <h1>UniPOA</h1>
           </Link>
       </div>
@@ -32,14 +34,10 @@ const HeaderIn = () => {
         <button className={classes.menuToggle} onClick={handleMenuToggle} ><FontAwesomeIcon className={classes.icon} icon={faBars} /></button>
         <nav className={ menuActive ? `${classes.active}` : ""}>
           <ul className={classes.divButtons}>
-            <li><button className={classes.toggleLink}><Link to="/symptoms"><FontAwesomeIcon className={classes.icon} icon={faStethoscope} /> Sintomas</Link></button></li>
-            <li><button className={classes.toggleLink}><Link to="/medicines"><FontAwesomeIcon className={classes.icon} icon={faCapsules} /> Medicamentos</Link></button></li>
-            <li><button className={classes.toggleLink}><Link to="/vaccines"><FontAwesomeIcon className={classes.icon} icon={faSyringe} /> Vacinas</Link></button></li>
-            <li><button className={classes.toggleLink}><Link to="/bloodPressure"><FontAwesomeIcon className={classes.icon} icon={faHeartPulse} /> Pressão arterial</Link></button></li>
-            <li><button className={classes.toggleLink}><Link to="/weight"><FontAwesomeIcon className={classes.icon} icon={faWeightScale} /> Peso</Link></button></li>
-            <li><button className={classes.toggleLink}><Link to="/appointments"><FontAwesomeIcon className={classes.icon} icon={faCalendar} /> Consultas</Link></button></li>
-            <li><button id={classes.buttonPurple}><Link className={classes.headerLink} to="/profile">Meu Perfil</Link></button></li>
-            <li><button id={classes.buttonGreen} type='button' onClick={()=>handleLogout()}><Link className={classes.headerLink} to="/">Sair<FontAwesomeIcon className={classes.icon} icon={faArrowRightFromBracket} /></Link></button></li>
+            {linksDoPerfil().map((link) => (
+              <li key={link.to}><button className={classes.toggleLink}><Link to={link.to}><FontAwesomeIcon className={classes.icon} icon={link.icone} /> {link.texto}</Link></button></li>
+            ))}
+            <li><button id={classes.buttonGreen} type='button' onClick={handleLogout}><span className={classes.headerLink}>Sair <FontAwesomeIcon className={classes.icon} icon={faArrowRightFromBracket} /></span></button></li>
           </ul>
         </nav>
       </div>

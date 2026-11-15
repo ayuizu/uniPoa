@@ -1,10 +1,9 @@
-// Falta ajustar os links
-
 import classes from "./Menu.module.css";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStethoscope, faCapsules, faSyringe, faHeartPulse, faWeightScale, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
+import { linksDoPerfil } from "./navegacao";
+import { isAdmin, nomeUsuario } from "../services/sessao";
 
 const SidebarLink = styled(NavLink)`
   text-decoration: none;
@@ -27,14 +26,12 @@ const Menu = () => {
 
   return (
     <div className={classes.menuContainer}>
-      <h2>Meus Dados de Saúde </h2>
+      <h2>{isAdmin() ? "Área Administrativa" : "Área do Aluno"}</h2>
+      <p className={classes.usuario}>{nomeUsuario()}</p>
         <ul>
-          <li><SidebarLink className={({ isActive }) => isActive ? 'active' : ''} to="/symptoms"><FontAwesomeIcon className={classes.icon} icon={faStethoscope} /> Sintomas</SidebarLink></li>
-          <li><SidebarLink className={({ isActive }) => isActive ? 'active' : ''} to="/medicines"><FontAwesomeIcon className={classes.icon} icon={faCapsules} /> Medicamentos</SidebarLink></li>
-          <li><SidebarLink className={({ isActive }) => isActive ? 'active' : ''} to="/vaccines"><FontAwesomeIcon className={classes.icon} icon={faSyringe} /> Vacinas</SidebarLink></li>
-          <li><SidebarLink className={({ isActive }) => isActive ? 'active' : ''} to="/bloodPressure"><FontAwesomeIcon className={classes.icon} icon={faHeartPulse} /> Pressão arterial</SidebarLink></li>
-          <li><SidebarLink className={({ isActive }) => isActive ? 'active' : ''} to="/weight"><FontAwesomeIcon className={classes.icon} icon={faWeightScale} /> Peso</SidebarLink></li>
-          <li><SidebarLink className={({ isActive }) => isActive ? 'active' : ''} to="/appointments"><FontAwesomeIcon className={classes.icon} icon={faCalendar} /> Consultas</SidebarLink></li>
+          {linksDoPerfil().map((link) => (
+            <li key={link.to}><SidebarLink className={({ isActive }) => isActive ? 'active' : ''} to={link.to}><FontAwesomeIcon className={classes.icon} icon={link.icone} /> {link.texto}</SidebarLink></li>
+          ))}
       </ul>
     </div>
   );

@@ -1,0 +1,65 @@
+.wrapper {
+  overflow-x: auto;
+}
+
+.grade {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 13px;
+}
+
+.grade th {
+  background-color: var(--color6);
+  padding: 10px 6px;
+}
+
+.grade td {
+  border: 1px solid #e4e4e4;
+  height: 78px;
+  padding: 4px;
+  vertical-align: top;
+}
+
+.colunaHorario {
+  width: 110px;
+  white-space: nowrap;
+}
+
+.turma {
+  background-color: var(--color1);
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1.25;
+}
+
+.turma strong {
+  font-size: 13px;
+}
+
+.turma span {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.turma button {
+  margin-top: 4px;
+  align-self: flex-start;
+  background-color: #fff;
+  color: #8c1d18;
+  border: none;
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.turma button:hover {
+  background-color: #fde8e7;
+}

@@ -29,7 +29,6 @@ function Header() {
             <li><button className={classes.headerButton}><Link className={classes.headerLink} to="/contact">Contato</Link></button></li>
             <li><button className={classes.headerButton}><Link className={classes.headerLink} to="/faq">FAQ</Link></button></li>
             <li><button id={classes.buttonPurple}><Link to="/login">Login</Link></button></li>
-            <li><button id={classes.buttonGreen}><Link to="/register">Cadastre-se</Link></button></li>
           </ul>
         </nav>
       </div>
