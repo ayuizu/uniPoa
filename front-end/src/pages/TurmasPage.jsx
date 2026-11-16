@@ -84,7 +84,7 @@ const TurmasPage = () => {
 
             <form className={classes.cartao} onSubmit={salvar}>
                 <h2>Informações da turma</h2>
-                <p className={classes.descricaoForm}>Preencha os campos para ofertar uma nova turma no semestre {SEMESTRE_ATUAL}.</p>
+                <p className={classes.descricaoCartao}>Preencha os campos para ofertar uma nova turma no semestre {SEMESTRE_ATUAL}.</p>
                 <div className={classes.formGrid}>
                     <div className={classes.campo}>
                         <label htmlFor="idProfessor">Professor *</label>

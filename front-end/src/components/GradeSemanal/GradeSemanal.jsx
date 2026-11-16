@@ -2,7 +2,11 @@ import classes from './GradeSemanal.module.css';
 import { DIAS, TURNOS, montarHorario } from '../horario';
 
 // Grade semanal: colunas = dias da semana, linhas = turnos. renderTurma desenha o conteúdo de cada turma na célula
-// compacta: versão menor, com dias e horários abreviados (usada na Visão geral)
+// compacta: versão menor, com dias abreviados (usada na Visão geral)
+
+// Cada disciplina recebe sempre a mesma cor
+const CORES = ['roxo', 'verde', 'azul', 'rosa', 'laranja', 'turquesa'];
+
 const GradeSemanal = ({ turmas, renderTurma, compacta = false }) => {
   return (
     <div className={classes.wrapper}>
@@ -16,7 +20,7 @@ const GradeSemanal = ({ turmas, renderTurma, compacta = false }) => {
         <tbody>
           {TURNOS.map((turno) => (
             <tr key={turno.codigo}>
-              <th scope="row" className={classes.colunaHorario}>{compacta ? turno.curta : turno.faixa}</th>
+              <th scope="row" className={classes.colunaHorario}>{turno.curta}</th>
               {DIAS.map((dia) => {
                 const horario = montarHorario(dia.codigo, turno.codigo);
                 return (
@@ -24,7 +28,7 @@ const GradeSemanal = ({ turmas, renderTurma, compacta = false }) => {
                     {turmas
                       .filter((turma) => turma.horario === horario)
                       .map((turma, i) => (
-                        <div key={i} className={classes.turma}>{renderTurma(turma)}</div>
+                        <div key={i} className={`${classes.turma} ${classes[CORES[turma.idDisciplina % CORES.length]]}`}>{renderTurma(turma)}</div>
                       ))}
                   </td>
                 );
