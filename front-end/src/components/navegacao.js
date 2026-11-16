@@ -1,17 +1,34 @@
-import { faListCheck, faCalendarDays, faChalkboard, faChalkboardUser } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faListCheck, faCalendarDays, faChalkboard, faChalkboardUser } from "@fortawesome/free-solid-svg-icons";
 import { isAdmin } from "../services/sessao";
 
-// Links da área logada, compartilhados pelo HeaderIn e pelo Menu lateral
-export function linksDoPerfil() {
+// Seções do menu da área logada (Menu lateral e HeaderIn no celular). Só entram páginas que já existem
+export function secoesDoPerfil() {
   return isAdmin()
     ? [
-        { to: "/turmas", texto: "Turmas", icone: faChalkboard },
-        { to: "/grade-professor", texto: "Grade por professor", icone: faChalkboardUser },
+        {
+          titulo: "Institucional",
+          links: [
+            { to: "/user", texto: "Visão geral", icone: faHouse },
+            { to: "/turmas", texto: "Gerenciar turmas", icone: faChalkboard },
+            { to: "/grade-professor", texto: "Grade por professor", icone: faChalkboardUser },
+          ],
+        },
       ]
     : [
-        { to: "/matricula", texto: "Matrícula", icone: faListCheck },
-        { to: "/grade", texto: "Minha grade", icone: faCalendarDays },
+        {
+          titulo: "Portal do aluno",
+          links: [{ to: "/user", texto: "Visão geral", icone: faHouse }],
+        },
+        {
+          titulo: "Vida acadêmica",
+          links: [
+            { to: "/matricula", texto: "Realizar matrícula", icone: faListCheck },
+            { to: "/grade", texto: "Minha grade horária", icone: faCalendarDays },
+          ],
+        },
       ];
 }
 
-export const paginaInicialDoPerfil = () => (isAdmin() ? "/turmas" : "/matricula");
+export const linksDoPerfil = () => secoesDoPerfil().flatMap((secao) => secao.links);
+
+export const paginaInicialDoPerfil = () => "/user";

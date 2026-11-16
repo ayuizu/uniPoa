@@ -24,12 +24,12 @@ const Login = () => {
   const handleLoginAluno = () => {
     const aluno = alunos.find((a) => String(a.id) === idAluno);
     entrarComoAluno(aluno);
-    navigate('/matricula');
+    navigate('/user');
   };
 
   const handleLoginAdmin = () => {
     entrarComoAdmin();
-    navigate('/turmas');
+    navigate('/user');
   };
 
   return (

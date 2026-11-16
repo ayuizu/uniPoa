@@ -10,56 +10,131 @@
   font-size: 13px;
 }
 
-.grade th {
-  background-color: var(--color6);
+.grade thead th {
+  background-color: #f3f4f8;
+  color: #6b7280;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   padding: 10px 6px;
 }
 
+.grade tbody th {
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .grade td {
-  border: 1px solid #e4e4e4;
-  height: 78px;
+  border: 1px solid #eef0f4;
+  height: 64px;
   padding: 4px;
   vertical-align: top;
 }
 
 .colunaHorario {
-  width: 110px;
+  width: 90px;
   white-space: nowrap;
 }
 
 .turma {
-  background-color: var(--color1);
-  color: #fff;
   border-radius: 6px;
   padding: 6px 8px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
   line-height: 1.25;
 }
 
 .turma strong {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .turma span {
-  font-size: 12px;
-  opacity: 0.9;
+  font-size: 11px;
+  opacity: 0.85;
 }
 
 .turma button {
-  margin-top: 4px;
+  margin-top: auto;
   align-self: flex-start;
-  background-color: #fff;
-  color: #8c1d18;
+  background: none;
   border: none;
-  border-radius: 3px;
-  padding: 2px 8px;
-  font-size: 12px;
+  padding: 0;
+  font-size: 11px;
+  color: inherit;
+  text-decoration: underline;
+  opacity: 0.85;
   cursor: pointer;
 }
 
 .turma button:hover {
-  background-color: #fde8e7;
+  opacity: 1;
+}
+
+/* Uma cor por disciplina (fundo pastel e texto na mesma cor), como no Figma */
+
+.roxo {
+  background-color: #efeafd;
+  color: #5b45c4;
+}
+
+.verde {
+  background-color: #e3f6ee;
+  color: #237a5a;
+}
+
+.azul {
+  background-color: #e6effd;
+  color: #2d5fa8;
+}
+
+.rosa {
+  background-color: #fde8ee;
+  color: #b23a5e;
+}
+
+.laranja {
+  background-color: #fef1e2;
+  color: #a85a14;
+}
+
+.turquesa {
+  background-color: #e0f4f6;
+  color: #1f7380;
+}
+
+/* Versão compacta (Visão geral) */
+
+.compacta {
+  min-width: 480px;
+  font-size: 12px;
+}
+
+.compacta thead th {
+  padding: 6px 4px;
+  font-size: 10px;
+}
+
+.compacta .colunaHorario {
+  width: 56px;
+}
+
+.compacta td {
+  height: 44px;
+  padding: 3px;
+}
+
+.compacta .turma {
+  padding: 4px 6px;
+}
+
+.compacta .turma strong {
+  font-size: 11px;
+}
+
+.compacta .turma span {
+  font-size: 10px;
 }

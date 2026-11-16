@@ -1,19 +1,20 @@
 import classes from "./Menu.module.css";
-import { NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { linksDoPerfil } from "./navegacao";
-import { isAdmin, nomeUsuario } from "../services/sessao";
+import { secoesDoPerfil } from "./navegacao";
+import { sair } from "../services/sessao";
 
 const SidebarLink = styled(NavLink)`
   text-decoration: none;
-  color: #333;
-  padding: 10px;
+  color: #344054;
+  padding: 8px 12px;
+  border-radius: 8px;
   display: block;
 
   &.active {
-    color: var(--color1);
-    font-size: 1.125rem;
+    background-color: #d3f0e5;
+    color: var(--color3);
+    font-weight: 600;
   }
 
   @media only screen and (max-width: 769px){
@@ -23,16 +24,26 @@ const SidebarLink = styled(NavLink)`
 
 
 const Menu = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    sair();
+    navigate('/');
+  };
 
   return (
     <div className={classes.menuContainer}>
-      <h2>{isAdmin() ? "Área Administrativa" : "Área do Aluno"}</h2>
-      <p className={classes.usuario}>{nomeUsuario()}</p>
-        <ul>
-          {linksDoPerfil().map((link) => (
-            <li key={link.to}><SidebarLink className={({ isActive }) => isActive ? 'active' : ''} to={link.to}><FontAwesomeIcon className={classes.icon} icon={link.icone} /> {link.texto}</SidebarLink></li>
-          ))}
-      </ul>
+      {secoesDoPerfil().map((secao) => (
+        <div key={secao.titulo}>
+          <h3>{secao.titulo}</h3>
+          <ul>
+            {secao.links.map((link) => (
+              <li key={link.to}><SidebarLink className={({ isActive }) => isActive ? 'active' : ''} to={link.to}>{link.texto}</SidebarLink></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <button type="button" className={classes.sair} onClick={handleLogout}>Sair da conta</button>
     </div>
   );
 };

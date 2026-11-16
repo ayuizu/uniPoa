@@ -19,6 +19,79 @@ header {
   height: 60px;
 }
 
+.headerLogo {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.headerLogo a {
+  color: var(--color3);
+}
+
+.headerSubtitulo {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Usuário logado (HeaderIn) */
+
+.headerNav {
+  display: flex;
+  align-items: center;
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color3);
+}
+
+.usuario strong {
+  display: block;
+  font-size: 14px;
+}
+
+.usuario div span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #d9d0fb;
+  color: var(--color4);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.somenteMobile,
+.navMobile {
+  display: none;
+}
+
+/* Cabeçalho da área logada: mais baixo e com logo menor, como no Figma */
+.headerIn {
+  height: 64px;
+  padding: 0 24px;
+}
+
+.headerIn .headerLogo h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.headerIn .menuToggle {
+  top: 20px;
+}
+
 /* Navigation */
 
 .divButtons{
@@ -133,8 +206,11 @@ button > .headerLink:hover{
 
 @media only screen and (max-width: 767px) {
 
-  .menuToggle, .toggleLink {
+  .menuToggle, .toggleLink, .somenteMobile {
       display: block;
+  }
+  .usuario {
+    display: none;
   }
   .menuToggle:hover{
     color: var(--color2);

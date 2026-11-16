@@ -1,32 +1,33 @@
-//Importante: Falta trocar o header para o de navegação interna
+import { useNavigate } from "react-router-dom";
+import AreaLogada from "../components/AreaLogada";
+import VisaoGeralAluno from "../components/VisaoGeral/VisaoGeralAluno";
+import VisaoGeralAdmin from "../components/VisaoGeral/VisaoGeralAdmin";
+import { isAdmin, nomeUsuario } from "../services/sessao";
 
-import HeaderIn from "../components/HeaderIn";
-import Footer from "../components/Footer";
-import Menu from "../components/Menu";
-import classes from "./UserPage.module.css"
-
+// Página inicial depois do login: Visão geral do aluno ou do administrador
 const UserPage = () => {
+    const navigate = useNavigate();
+
+    if (isAdmin()) {
+        return (
+            <AreaLogada
+                titulo="Visão geral"
+                subtitulo="Acompanhe as ofertas acadêmicas e gerencie as turmas."
+                acao={<button className="buttonPurple" onClick={() => navigate('/turmas')}>+ Nova turma</button>}
+            >
+                <VisaoGeralAdmin />
+            </AreaLogada>
+        );
+    }
+
     return (
-        <div className={classes.page}>
-            <div><HeaderIn /></div>
-            <div className={classes.userContent}>
-                <div className={classes.divMenu}>
-                    <Menu />
-                </div>
-                <div className={classes.divContent}>
-                        <img className={classes.userImage} src='src/assets/users_pixabay.jpg' alt="Mãos unidas" />
-                    <div className={classes.divInfo}>
-                        <h1>Bem-vindo(a) ao <span className={classes.unipoa}>UniPOA!</span></h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum finibus nisl, a pretium sapien luctus vel. Etiam luctus ullamcorper eros vel congue. Aenean et tortor augue.
-                            <br /><br />
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum finibus nisl, a pretium sapien luctus vel. Etiam luctus ullamcorper eros vel congue. Aenean et tortor augue. Phasellus cursus lacus eget ligula dignissim, at viverra nulla maximus. Maecenas faucibus nibh ut risus vulputate faucibus. 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <Footer />
-        </div>
-    )
+        <AreaLogada
+            titulo={`Olá, ${nomeUsuario().split(' ')[0]}!`}
+            subtitulo="Acompanhe suas matrículas e organize sua rotina acadêmica."
+        >
+            <VisaoGeralAluno />
+        </AreaLogada>
+    );
 }
 
 export default UserPage;

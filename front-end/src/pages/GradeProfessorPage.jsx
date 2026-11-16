@@ -48,17 +48,18 @@ const GradeProfessorPage = () => {
 
             {grade && (
                 <>
-                    <div className={classes.resumo}>
-                        <div className={classes.resumoItem}><span>Professor</span><strong>{grade.nomeProfessor}</strong></div>
-                        <div className={classes.resumoItem}><span>Turmas</span><strong>{grade.turmas.length}</strong></div>
-                        <div className={classes.resumoItem}><span>Carga semanal</span><strong>{grade.cargaHorariaSemanal} h</strong></div>
-                        <div className={classes.resumoItem}><span>Carga semestral</span><strong>{grade.cargaHorariaSemestral} h</strong></div>
+                    <div className={`${classes.cartao} ${classes.faixaResumo}`}>
+                        <div><span>Professor</span><strong>{grade.nomeProfessor}</strong></div>
+                        <div><span>Turmas</span><strong>{grade.turmas.length} no semestre</strong></div>
+                        <div><span>Carga horária</span><strong>{grade.cargaHorariaSemanal} horas semanais · {grade.cargaHorariaSemestral} no semestre</strong></div>
                     </div>
 
                     {grade.turmas.length === 0 ? (
                         <p className={`${classes.cartao} ${classes.vazio}`}>Nenhuma turma atribuída a este professor no semestre.</p>
                     ) : (
                         <div className={classes.cartao}>
+                            <h2>Horários da semana</h2>
+                            <p className={classes.descricaoCartao}>Turmas atribuídas ao professor no semestre.</p>
                             <GradeSemanal
                                 turmas={grade.turmas}
                                 renderTurma={(turma) => (

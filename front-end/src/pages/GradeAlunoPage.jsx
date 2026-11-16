@@ -54,18 +54,20 @@ const GradeAlunoPage = () => {
     };
 
     return (
-        <AreaLogada titulo="Minha grade" subtitulo={`Turmas matriculadas no semestre ${SEMESTRE_ATUAL}`}>
+        <AreaLogada
+            titulo="Minha grade horária"
+            subtitulo="Visualize suas aulas e confira seus horários durante a semana."
+            acao={<span className={classes.chipSemestre}>Semestre {SEMESTRE_ATUAL}</span>}
+        >
             {erro && <p className={classes.alertaErro}>{erro}</p>}
             {sucesso && <p className={classes.alertaSucesso}>{sucesso}</p>}
 
             {grade && (
                 <>
-                    <div className={classes.resumo}>
-                        <div className={classes.resumoItem}><span>Aluno</span><strong>{grade.nomeAluno}</strong></div>
-                        <div className={classes.resumoItem}><span>Período atual</span><strong>{grade.periodoAtual}º</strong></div>
-                        <div className={classes.resumoItem}><span>Disciplinas</span><strong>{grade.totalDisciplinas}</strong></div>
-                        <div className={classes.resumoItem}><span>Carga semanal</span><strong>{grade.cargaHorariaSemanal} h</strong></div>
-                        <div className={classes.resumoItem}><span>Carga semestral</span><strong>{grade.cargaHorariaSemestral} h</strong></div>
+                    <div className={`${classes.cartao} ${classes.faixaResumo}`}>
+                        <div><span>Aluno</span><strong>{grade.nomeAluno} · {grade.periodoAtual}º período</strong></div>
+                        <div><span>Disciplinas</span><strong>{grade.totalDisciplinas} matriculada(s)</strong></div>
+                        <div><span>Carga horária</span><strong>{grade.cargaHorariaSemanal} horas semanais · {grade.cargaHorariaSemestral} no semestre</strong></div>
                     </div>
 
                     {grade.turmas.length === 0 ? (
@@ -77,6 +79,8 @@ const GradeAlunoPage = () => {
                     ) : (
                         <>
                             <div className={classes.cartao}>
+                                <h2>Horários da semana</h2>
+                                <p className={classes.descricaoCartao}>As disciplinas são exibidas conforme as matrículas confirmadas.</p>
                                 <GradeSemanal
                                     turmas={grade.turmas}
                                     renderTurma={(item) => (
@@ -87,6 +91,7 @@ const GradeAlunoPage = () => {
                                         </>
                                     )}
                                 />
+                                <p className={classes.dica}>Dica: para trocar de turma, cancele a matrícula aqui e escolha outra em Realizar matrícula.</p>
                             </div>
                             <div className={classes.acoes}>
                                 <button className="buttonPurple" onClick={() => navigate('/matricula')}>
