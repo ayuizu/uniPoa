@@ -1,54 +1,63 @@
-import Header from "../components/Header";
-import "../App.css";
-import Footer from "../components/Footer";
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookOpen, faCalendarDays, faClipboardCheck } from '@fortawesome/free-solid-svg-icons';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import classes from './HomePage.module.css';
 
+const funcionalidades = [
+  {
+    titulo: 'Matrículas',
+    descricao: 'Consulte as turmas disponíveis e realize sua matrícula.',
+    icone: faClipboardCheck,
+    destino: '/login',
+  },
+  {
+    titulo: 'Grade horária',
+    descricao: 'Visualize suas aulas e organize sua rotina acadêmica.',
+    icone: faCalendarDays,
+    destino: '/login',
+  },
+  {
+    titulo: 'Disciplinas',
+    descricao: 'Explore as disciplinas, seus períodos e pré-requisitos.',
+    icone: faBookOpen,
+    destino: '/login',
+  },
+];
 
-const HomePage = () => {
-  return (
-    <div>
-      <Header />
-      <div className="content">
-        <div className="div--banner">
-          <div className="div--banner--text">
-            <h1>UniPOA inaugura novo portal de matrícula</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum finibus nisl, a pretium sapien luctus vel. Etiam luctus ullamcorper eros vel congue. Aenean et tortor augue. Phasellus cursus lacus eget ligula dignissim, at viverra nulla maximus. Maecenas faucibus nibh ut risus vulputate faucibus. Nam et vestibulum enim. Cras semper sodales est, aliquet finibus sem consequat sit amet. Phasellus massa leo, tristique eget est vitae, dapibus pulvinar elit. Aenean condimentum sollicitudin cursus. Sed at rutrum dolor. Aliquam elit felis, tincidunt ac nulla ac, porta porta odio.
-            </p>
-          </div>
-        </div>
-        <div className="cont--info">
-          <h1>O período de matrículas está aberto!</h1>
+const HomePage = () => (
+  <div className={classes.home}>
+    <Header />
+    <main>
+      <section className={classes.hero} aria-labelledby="home-title">
+        <div className={classes.heroCard}>
+          <h1 id="home-title">Sua jornada acadêmica começa aqui!</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum finibus nisl, a pretium sapien luctus vel. Etiam luctus ullamcorper eros vel congue. Aenean et tortor augue.
+            Acesse o portal UniPOA para consultar disciplinas, organizar sua grade horária e
+            realizar suas matrículas de forma simples e prática.
           </p>
-          <div className="grid">
-            <div className="item">
-              <img className="itemImage" src='src/assets/vaccine_cottonbro.jpg' alt="Seringa frasco-ampola para vacinação por Cottonbro Studio" />
-              <h3>Vacinas</h3>
-              <p>
-                Histórico vacinal sempre à mão.
-              </p>
-            </div>
-            <div className="item">
-              <img className="itemImage" src='src/assets/medicines_pietrozj.jpg' alt="Medicamento em cápsulas por Pietro Jeng" />
-              <h3>Medicamentos</h3>
-              <p>
-                Tratamentos organizados com facilidade.
-              </p>
-            </div>
-            <div className="item">
-              <img className="itemImage" src='src/assets/appointment_pixabay.jpg' alt="Agenda e estetoscópio por Pixabay." />
-              <h3>Agenda de consultas</h3>
-              <p>
-                Controle fácil das suas consultas.
-              </p>
-            </div>
-          </div>
+          <Link className={classes.heroButton} to="/login">Acessar portal</Link>
         </div>
-      </div>
-      <Footer />
-    </div>
-  );
-}
+      </section>
+
+      <section className={classes.features} aria-labelledby="features-title">
+        <div className={classes.featuresIntro}>
+          <h2 id="features-title">Tudo o que você precisa em um só lugar</h2>
+        </div>
+        <div className={classes.featureGrid}>
+          {funcionalidades.map(({ titulo, descricao, icone, destino }) => (
+            <article className={classes.featureCard} key={titulo}>
+              <FontAwesomeIcon className={classes.featureIcon} icon={icone} aria-hidden="true" />
+              <h3><Link to={destino}>{titulo}</Link></h3>
+              <p>{descricao}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </div>
+);
 
 export default HomePage;

@@ -1,0 +1,231 @@
+.home {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  padding-top: 100px;
+  background: #f7f5fc;
+}
+
+.home main {
+  min-width: 0;
+}
+
+.hero {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: clamp(430px, 52vw, 620px);
+  padding: clamp(32px, 6vw, 88px) 24px;
+  display: grid;
+  place-items: center;
+  background-image: linear-gradient(115deg, rgb(20 36 39 / 24%), rgb(28 70 80 / 18%)), url('../assets/universidade.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heroCard {
+  width: 100%;
+  max-width: 900px;
+  min-width: 0;
+  padding: clamp(28px, 5vw, 64px);
+  border: 1px solid rgb(255 255 255 / 32%);
+  border-radius: 18px;
+  background: rgb(113 86 190 / 82%);
+  box-shadow: 0 20px 55px rgb(22 29 45 / 22%);
+  color: #fff;
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+
+.heroCard h1 {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: clamp(2rem, 4.2vw, 3.65rem);
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.heroCard p {
+  max-width: 660px;
+  margin: clamp(18px, 3vw, 28px) auto 0;
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.heroButton {
+  display: inline-flex;
+  min-height: 48px;
+  margin-top: 28px;
+  padding: 12px 26px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background: #1c4650;
+  color: #fff;
+  font-weight: 700;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.heroButton:hover,
+.heroButton:focus-visible {
+  background: #12353d;
+  transform: translateY(-2px);
+}
+
+.heroButton:focus-visible,
+.featureCard a:focus-visible {
+  outline: 3px solid #a68ff1;
+  outline-offset: 4px;
+}
+
+.features {
+  width: calc(100% - 48px);
+  max-width: 1160px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+
+.featuresIntro {
+  max-width: 720px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.featuresIntro h2 {
+  margin: 0;
+  color: #1c4650;
+  font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.featureGrid {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 28px);
+}
+
+.featureCard {
+  min-width: 0;
+  max-width: 100%;
+  min-height: 225px;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid #e8e2f8;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(28 70 80 / 7%);
+  text-align: center;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.featureCard:hover {
+  box-shadow: 0 14px 32px rgb(28 70 80 / 13%);
+  transform: translateY(-4px);
+}
+
+.featureIcon {
+  width: 32px;
+  height: 32px;
+  color: #1c4650;
+}
+
+.featureCard h3 {
+  margin: 18px 0 10px;
+  color: #1c4650;
+  font-size: 1.25rem;
+}
+
+.featureCard h3 a {
+  color: inherit;
+}
+
+.featureCard h3 a:hover {
+  color: #765dc4;
+}
+
+.featureCard p {
+  max-width: 290px;
+  margin: 0 auto;
+  color: #435d62;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .home {
+    padding-top: 76px;
+  }
+
+  .featureGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .featureCard:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 12px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    min-height: 440px;
+    padding: 28px 18px;
+  }
+
+  .heroCard {
+    padding: 30px 22px;
+    border-radius: 14px;
+  }
+
+  .heroCard p {
+    line-height: 1.55;
+  }
+
+  .features {
+    width: calc(100% - 36px);
+    max-width: 420px;
+    padding: 54px 0;
+  }
+
+  .featuresIntro {
+    margin-bottom: 28px;
+  }
+
+  .featureGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .featureCard,
+  .featureCard:last-child {
+    width: 100%;
+    min-height: 0;
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 350px) {
+  .hero {
+    padding-inline: 12px;
+  }
+
+  .heroCard {
+    padding: 26px 16px;
+  }
+
+  .features {
+    width: calc(100% - 24px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroButton,
+  .featureCard {
+    transition: none;
+  }
+}
