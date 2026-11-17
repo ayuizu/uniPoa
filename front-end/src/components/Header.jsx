@@ -34,7 +34,6 @@ function Header() {
       </button>
       <nav id="main-navigation" className={menuActive ? classes.active : ""} onClick={() => setMenuActive(false)}>
           <ul className={classes.divButtons}>
-            <li><button className={classes.headerButton}><Link className={classes.headerLink} to="/about">Sobre</Link></button></li>
             <li><button className={classes.headerButton}><Link className={classes.headerLink} to="/contact">Contato</Link></button></li>
             <li><button className={classes.headerButton}><Link className={classes.headerLink} to="/faq">FAQ</Link></button></li>
             <li><button id={classes.buttonPurple}><Link to="/login">Login</Link></button></li>

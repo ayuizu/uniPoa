@@ -34,7 +34,7 @@
 }
 
 .faqItem:hover {
-  transform: translate3d(-50px, -10px, 0px);
+  transform: translateY(-2px);
 }
 
 .faqItem h3 {
@@ -55,4 +55,10 @@
 
 .faqItem a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .pageFaq {
+    width: calc(100% - 32px);
+  }
 }

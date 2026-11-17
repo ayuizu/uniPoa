@@ -12,7 +12,6 @@ function Footer() {
 
         <nav className={classes.navigation} aria-label="Navegação do rodapé">
           <ul>
-            <li><Link className={classes.link} to="/about">Sobre</Link></li>
             <li><Link className={classes.link} to="/contact">Contato</Link></li>
             <li><Link className={classes.link} to="/faq">FAQ</Link></li>
           </ul>
