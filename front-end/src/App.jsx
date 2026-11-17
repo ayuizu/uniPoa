@@ -4,7 +4,6 @@ import AdminRoute from "./components/AdminRoute";
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import UserPage from "./pages/UserPage";
-import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import FAQPage from "./pages/FAQPage";
 import MatriculaPage from "./pages/MatriculaPage";
@@ -23,7 +22,6 @@ function App() {
           <Route path='/login' Component={LoginPage} />
 
 
-          <Route path='/about' Component={AboutPage} />
           <Route path='/contact' Component={ContactPage} />
           <Route path='/faq' Component={FAQPage} />
 

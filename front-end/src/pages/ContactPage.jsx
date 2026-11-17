@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 
 const ContactPage = () => {
   return (
@@ -42,15 +41,6 @@ const ContactPage = () => {
             </p>
           </div>
 
-          <div className={classes.contactItem}>
-            <div className={classes.contactIcon}><FontAwesomeIcon icon={faTelegram} style={{color: "#1C4650",}} size="xs" /> </div>
-            <h3>Telegram</h3>
-            <p>
-              <a href="" target="_blank">
-                canalcartaosaude
-              </a>
-            </p>
-          </div>
         </div>
       </div>
       <div>

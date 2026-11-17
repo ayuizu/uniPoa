@@ -22,10 +22,18 @@ function Header() {
           </Link>
       </div>
       <div className={classes.headerNav}>
-      <button className={classes.menuToggle} onClick={handleMenuToggle} ><FontAwesomeIcon className={classes.icon} icon={faBars} /></button>
-      <nav className={ menuActive ? `${classes.active}` : ""}>
+      <button
+        className={classes.menuToggle}
+        type="button"
+        onClick={handleMenuToggle}
+        aria-label={menuActive ? "Fechar menu" : "Abrir menu"}
+        aria-expanded={menuActive}
+        aria-controls="main-navigation"
+      >
+        <FontAwesomeIcon className={classes.icon} icon={faBars} aria-hidden="true" />
+      </button>
+      <nav id="main-navigation" className={menuActive ? classes.active : ""} onClick={() => setMenuActive(false)}>
           <ul className={classes.divButtons}>
-            <li><button className={classes.headerButton}><Link className={classes.headerLink} to="/about">Sobre</Link></button></li>
             <li><button className={classes.headerButton}><Link className={classes.headerLink} to="/contact">Contato</Link></button></li>
             <li><button className={classes.headerButton}><Link className={classes.headerLink} to="/faq">FAQ</Link></button></li>
             <li><button id={classes.buttonPurple}><Link to="/login">Login</Link></button></li>
