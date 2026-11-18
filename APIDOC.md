@@ -12,7 +12,7 @@ Retorna as turmas ofertadas em um semestre, calculando vagas disponíveis, lista
 * **Método:** `GET`
 * **Endpoint:** `/api/turmas`
 * **Query Params:**
-  * `semestre` *(String, opcional, padrão: `"2026/1"`)* — Semestre letivo desejado.
+  * `semestre` *(String, opcional, padrão: `"2027/1"`)* — Semestre letivo desejado.
   * `idAluno` *(Long, opcional)* — ID do aluno para avaliar se ele já cumpriu os pré-requisitos (`elegivel`).
 * **Request Body:** *Nenhum*
 
