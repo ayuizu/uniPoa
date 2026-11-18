@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import AreaLogada from '../components/AreaLogada';
 import Modal from '../components/Modal';
 import classes from '../components/Academico.module.css';
-import { descreverHorario } from '../components/horario';
+import { descreverHorario } from '../utils/horario';
 import { idAlunoLogado } from '../services/sessao';
 import {
     SEMESTRE_ATUAL, listarTurmas, consultarGradeAluno, matricular, mensagemErro,

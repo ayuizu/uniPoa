@@ -1,50 +1,56 @@
-import classes from "./Menu.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import { secoesDoPerfil } from "./navegacao";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import classes from "./Menu.module.css";
+import { secoesDoPerfil } from "../utils/navegacao";
 import { sair } from "../services/sessao";
-
-const SidebarLink = styled(NavLink)`
-  text-decoration: none;
-  color: #344054;
-  padding: 8px 12px;
-  border-radius: 8px;
-  display: block;
-
-  &.active {
-    background-color: #d3f0e5;
-    color: var(--color3);
-    font-weight: 600;
-  }
-
-  @media only screen and (max-width: 769px){
-    padding: 3px;
-  }
-`;
-
 
 const Menu = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     sair();
-    navigate('/');
+    navigate("/");
   };
 
   return (
-    <div className={classes.menuContainer}>
+    <nav className={classes.menuContainer} aria-label="Menu lateral">
       {secoesDoPerfil().map((secao) => (
-        <div key={secao.titulo}>
+        <div key={secao.titulo} className={classes.secao}>
           <h3>{secao.titulo}</h3>
           <ul>
             {secao.links.map((link) => (
-              <li key={link.to}><SidebarLink className={({ isActive }) => isActive ? 'active' : ''} to={link.to}>{link.texto}</SidebarLink></li>
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${classes.sidebarLink} ${classes.active}`
+                      : classes.sidebarLink
+                  }
+                >
+                  {link.icone && (
+                    <FontAwesomeIcon
+                      icon={link.icone}
+                      className={classes.icone}
+                    />
+                  )}
+                  <span>{link.texto}</span>
+                </NavLink>
+              </li>
             ))}
           </ul>
         </div>
       ))}
-      <button type="button" className={classes.sair} onClick={handleLogout}>Sair da conta</button>
-    </div>
+
+      <button type="button" className={classes.sair} onClick={handleLogout}>
+        <FontAwesomeIcon
+          icon={faRightFromBracket}
+          className={classes.icone}
+        />
+        <span>Sair da conta</span>
+      </button>
+    </nav>
   );
 };
 

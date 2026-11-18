@@ -1,5 +1,5 @@
 import classes from './GradeSemanal.module.css';
-import { DIAS, TURNOS, montarHorario } from '../horario';
+import { DIAS, TURNOS, montarHorario } from '../../utils/horario';
 
 // Grade semanal: colunas = dias da semana, linhas = turnos. renderTurma desenha o conteúdo de cada turma na célula
 // compacta: versão menor, com dias abreviados (usada na Visão geral)

@@ -4,7 +4,7 @@ import AreaLogada from '../components/AreaLogada';
 import Dialog from '../components/Dialog';
 import GradeSemanal from '../components/GradeSemanal/GradeSemanal';
 import classes from '../components/Academico.module.css';
-import { descreverHorario } from '../components/horario';
+import { descreverHorario } from '../utils/horario';
 import { idAlunoLogado } from '../services/sessao';
 import { SEMESTRE_ATUAL, consultarGradeAluno, cancelarMatricula, mensagemErro } from '../services/api';
 

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import AreaLogada from '../components/AreaLogada';
 import classes from '../components/Academico.module.css';
-import { DIAS, TURNOS, montarHorario, descreverHorario } from '../components/horario';
+import { DIAS, TURNOS, montarHorario, descreverHorario } from '../utils/horario';
 import {
     SEMESTRE_ATUAL, listarProfessores, listarDisciplinas, listarTurmas, criarTurma, mensagemErro,
 } from '../services/api';
