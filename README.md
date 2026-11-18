@@ -53,12 +53,6 @@ b) Visão institucional:
 
 ---
 
-## Deploy Local
-
-1. **Clone o repositório:**
-   ```bash
-   git clone <LINK_DESTE_REPOSITORIO>
-
 # Portal de Matrículas — UniPOA
 
 Este projeto foi desenvolvido como parte da avaliação da disciplina Desenvolvimento Front-End da Unisinos (2026/02) pelos alunos Adrianne Ayumi Izu, Emilly Kennieli Pimentel da Silva e Gustavo Sandrin Dattein.
