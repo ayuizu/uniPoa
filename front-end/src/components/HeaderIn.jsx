@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import { linksDoPerfil, paginaInicialDoPerfil } from "./navegacao";
+import { linksDoPerfil, paginaInicialDoPerfil } from "../utils/navegacao";
 import { sair, nomeUsuario, descricaoUsuario, iniciais } from "../services/sessao";
 
 const HeaderIn = () => {

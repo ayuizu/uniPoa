@@ -5,7 +5,7 @@ import CartaoResumo from './CartaoResumo';
 import AcessoRapido from './AcessoRapido';
 import academico from '../Academico.module.css';
 import classes from './VisaoGeral.module.css';
-import { descreverHorarioCurto } from '../horario';
+import { descreverHorarioCurto } from '../../utils/horario';
 import { listarDisciplinas, listarProfessores, listarTurmas, mensagemErro } from '../../services/api';
 
 const TURMAS_NA_PREVIA = 5;

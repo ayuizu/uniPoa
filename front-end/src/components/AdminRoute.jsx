@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Navigate } from 'react-router-dom';
 import { estaLogado, isAdmin, idAlunoLogado } from '../services/sessao';
 
@@ -15,5 +16,10 @@ function AdminRoute({ isAdmin: exigeAdmin, children }) {
 
   return children;
 }
+
+AdminRoute.propTypes = {
+  isAdmin: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+};
 
 export default AdminRoute;
