@@ -3,7 +3,7 @@ import axios from 'axios';
 // Em desenvolvimento, o Vite encaminha /api para o back-end (ver vite.config.js)
 const api = axios.create({ baseURL: '/api' });
 
-export const SEMESTRE_ATUAL = '2026/1';
+export const SEMESTRE_ATUAL = '2027/1';
 
 // Extrai a mensagem de erro enviada pelo back-end (ResponseStatusException)
 export function mensagemErro(error) {
