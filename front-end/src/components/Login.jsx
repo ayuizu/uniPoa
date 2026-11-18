@@ -15,8 +15,15 @@ const Login = () => {
   useEffect(() => {
     listarAlunos()
       .then((lista) => {
-        setAlunos(lista);
-        if (lista.length > 0) setIdAluno(String(lista[0].id));
+        const ordenados = [...lista].sort((a, b) =>
+          `${a.nome} ${a.sobrenome}`.localeCompare(
+            `${b.nome} ${b.sobrenome}`,
+            'pt-BR',
+            { sensitivity: 'base' }
+          )
+        );
+        setAlunos(ordenados);
+        if (ordenados.length > 0) setIdAluno(String(ordenados[0].id));
       })
       .catch((error) => setErro(mensagemErro(error)));
   }, []);
