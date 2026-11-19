@@ -2,7 +2,8 @@
 
 Este projeto foi desenvolvido como parte da avaliação da disciplina Desenvolvimento Front-End da Unisinos (2026/02) pelos alunos ADRIANNE AYUMI IZU, EMILLY KENNIELI PIMENTEL DA SILVA e GUSTAVO SANDRIN DATTEIN.
 
-Veja mais sobre as especificações em [Documentação](./ESPECIFICACOES.md)
+Veja mais sobre as especificações em [Documentação](./ESPECIFICACOES.md).\
+Veja nosso protótipo de telas em [Figma](https://www.figma.com/design/gEYESiywCBXcF6dzzs9Nrb/Desafio-Frontend?node-id=0-1&p=f&t=26ewxPs5FGg2gkqV-0).
 
 O objetivo do projeto é desenvolver uma aplicação web que centralize e simplifique o processo de matrícula e gestão acadêmica dos estudantes da universidade **UniPOA**, tornando o acompanhamento curricular mais ágil e organizado. As principais funcionalidades desenvolvidas incluem:
 a) Visão do aluno:
@@ -50,63 +51,6 @@ b) Visão institucional:
 ##### Softwares:
 - MySQL Workbench para modelagem do banco de dados
 - Docker para conteinerização do banco de dados
-
----
-
-# Portal de Matrículas — UniPOA
-
-Este projeto foi desenvolvido como parte da avaliação da disciplina Desenvolvimento Front-End da Unisinos (2026/02) pelos alunos Adrianne Ayumi Izu, Emilly Kennieli Pimentel da Silva e Gustavo Sandrin Dattein.
-
-O objetivo do projeto é desenvolver uma aplicação web que centralize e simplifique o processo de matrícula e gestão acadêmica dos estudantes da universidade **UniPOA**, tornando o acompanhamento curricular mais ágil e organizado. As principais funcionalidades desenvolvidas incluem:
-a) Visão do aluno:
-- Realização de matrícula
-- Consulta e seleção de disciplinas disponíveis no semestre
-- Visualização de grade horária
-b) Visão institucional:
-- Criação de turmas
-- Visualização de grade horária por professor
-
----
-
-## Tecnologias Utilizadas
-
-### Front-End
-##### Linguagens e Bibliotecas:
-- HTML
-- CSS
-- JavaScript
-- React
-  - Vite para inicialização e build do projeto
-  - Axios para requisições HTTP à API
-  - React Router para gerenciamento de rotas
-  - CSS Modules / Styled Components para estilização
-
-##### Softwares
-- IDE: Visual Studio Code
-
-### Back-End
-##### Linguagens e Frameworks:
-- Java 17
-- Spring Framework
-  - Spring Boot
-  - Lombok para geração de Getters, Setters e Construtores
-  - Spring Validation para validação de dados e regras de negócio
-  - Spring Web para comunicação REST entre Front-End e Back-End
-
-##### Softwares
-- IDE: IntelliJ IDEA
-- Bruno e Postman para testar endpoints (requisições)
-
-### Banco de Dados
-##### Linguagem:
-- MySQL
-
-##### Softwares:
-- MySQL Workbench para modelagem do banco de dados
-- Docker para conteinerização do banco de dados
-
-### APIs
-Veja mais sobre as APIs na [Documentação da API](./APIDOC.md)
 
 ---
 
